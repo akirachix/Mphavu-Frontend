@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/Players/page.tsx", "src/components/PlayerStats/page.tsx", "src/components/Statistics/page.tsx", "src/components/Stats/page.tsx", "src/components/PlayerNotFound/page.tsx", "src/components/AddPlayer/page.tsx"],
   "exclude": ["node_modules"]
 }
