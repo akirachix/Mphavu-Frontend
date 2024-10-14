@@ -13,12 +13,10 @@ const LandingPage = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center relative">
     
-      {/* Header with the logo */}
       <header className="absolute top-0 left-0 p-5 z-20">
         <img src="/image (5).png" alt="Spot Us Logo" className="h-[96px] w-[298px] shadow-lg" />
       </header>
 
-      {/* Main content section */}
       <main className="text-center z-10">
         <h2 className="text-[96px] font-bold mt-[150px]">Train.Analyze.Develop</h2>
         <button
