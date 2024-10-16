@@ -3,6 +3,7 @@ import LandingPage from "./components/LandingPage";
 import Sidebar from "./components/Layout/AgentSidebar";
 import AgentSidebar from "./components/Layout/AgentSidebar";
 import StatisticsForm from "./components/statistics/page";
+import RegistrationForm from "./components/Signup";
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
        <AgentSidebar/> 
        <StatisticsForm/>
       </main>
-    
+      <RegistrationForm/>
     </div>
   );
 }
