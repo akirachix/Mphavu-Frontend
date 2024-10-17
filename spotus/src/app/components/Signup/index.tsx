@@ -53,7 +53,7 @@ const RegistrationForm = () => {
     <div className={`flex h-screen bg-gray-100 ml-32 mr-14 ${josefin.className}`}>
       <div className="2xl:w-1/2 relative ml-[60px]">
         <Image
-          src="/fieldimage.png"
+          src="/images/image (13).png"
           alt="Soccer field with players"
           height={460}
           width={560}
