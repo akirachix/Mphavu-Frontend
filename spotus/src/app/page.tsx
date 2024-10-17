@@ -3,6 +3,7 @@ import LandingPage from "./components/LandingPage";
 import Sidebar from "./components/Layout/AgentSidebar";
 import AgentSidebar from "./components/Layout/AgentSidebar";
 import Navbar from "./components/Navbar";
+import Teams from "./components/Team";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <main>
       <LandingPage/>
       <AgentSidebar/>
+      <Teams/>
        
       </main>
     
