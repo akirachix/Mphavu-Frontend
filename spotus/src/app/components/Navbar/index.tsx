@@ -53,7 +53,7 @@ const handleLinkClick = (link: string) => {
                         { name: 'Players', href: '/players' },
                         { name: 'Videos', href: '/videos' }
                     ].map((link, index) => (
-                        <li key={index} className="text-[24px] md:text-[28px] lg:text-[32px] xl:text-[36px]">
+                        <li key={index} className="text-[24px] md:text-[28px] lg:text-[30px] xl:text-[30px]">
                             <Link
                                 href={link.href}
                                 onClick={() => handleLinkClick(link.href)}

@@ -2,13 +2,13 @@
 
 import { ErrorResponse, TeamResponse } from './types';
 
-const BASE_URL = `${process.env.NEXT_PUBLIC_BASE_URL}/api/teams`; // Correct endpoint
+const BASE_URL = `${process.env.NEXT_PUBLIC_BASE_URL}/api/teams`;
 
 type PostTeamsFunction = (data: FormData) => Promise<TeamResponse>;
 
 export const postTeams: PostTeamsFunction = async (data: FormData) => {
   try {
-    const response = await fetch(BASE_URL, { // Use BASE_URL here
+    const response = await fetch(BASE_URL, { 
       method: 'POST',
       body: data,
     });
@@ -19,11 +19,10 @@ export const postTeams: PostTeamsFunction = async (data: FormData) => {
     }
 
     const result: TeamResponse = await response.json();
-    return result; // Return the success response
+    return result; 
   } catch (error) {
     console.error('Error posting teams:', error);
-    throw error; // Re-throw the error for further handling
-  }
+    throw error; 
 };
 
 

@@ -1,16 +1,13 @@
 
+
 "use client";
 import { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { Plus, ArrowLeft, Check, X, Upload } from 'react-feather';
-// import usePostTeams from '../Hooks/usePostTeams'; // Make sure this import is correct
 import usePostTeams from '@/app/Hooks/usePostTeams';
-// import { Team } from '../Utils/types';
 import { Team } from '@/app/Utils/types';
-
-
 
 const schema = yup.object().shape({
   name: yup.string().required('Team name is required'),
@@ -19,7 +16,7 @@ const schema = yup.object().shape({
   logo: yup.mixed()
     .required('Please upload team logo')
     .test('fileSize', 'Please upload team logo', (value) => {
-      return value && value.size <= 2000000; // 2MB limit
+      return value && value.size <= 2000000;
     })
     .test('fileType', 'Unsupported File Format', (value) => {
       return value && ['image/jpeg', 'image/png', 'image/gif'].includes(value?.type);
@@ -36,7 +33,7 @@ const TeamCreationForm = ({ onBack }) => {
   });
 
   const teamName = watch('name');
-  const { postTeams } = usePostTeams(); // Ensure this destructuring is correct
+  const { postTeams } = usePostTeams();
 
   const onSubmit = async (data) => {
     const formData = new FormData();
@@ -68,16 +65,17 @@ const TeamCreationForm = ({ onBack }) => {
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setValue('logo', file); // Set the file in the form state
+      setValue('logo', file);
       setPreviewImage(URL.createObjectURL(file));
     } else {
-      setValue('logo', null); // Clear the value if no file is selected
+      setValue('logo', null);
     }
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-gray-100 z-10">
-      <div className="w-full max-w-[1000px] mx-auto mt-8 p-6 bg-white rounded-lg relative border-2 border-gray-300">
+    <div className=" inset-0 flex items-center justify-center bg-gray-100 z-10">
+      <div className="w-full max-w-[1000px] mx-auto mt-0 xl:mt-8 p-6 bg-white rounded-lg relative border-2 border-gray-300">
+
         <div className="flex items-center mb-6">
           <ArrowLeft className="w-6 h-6 mr-2 text-gray-600 cursor-pointer" onClick={onBack} />
           <h2 className="text-[30px] md:text-[40px] font-semibold text-[#177BBD] mx-auto">Create Team</h2>
@@ -99,8 +97,8 @@ const TeamCreationForm = ({ onBack }) => {
             </label>
             <span className="ml-4 text-[#177BBD] font-medium text-[20px] md:text-[24px]">Upload Team Logo</span>
           </div>
-          {errors.logo && <p className="mt-1 text-sm text-red-600">{errors.logo.message}</p>} {/* Error message for logo */}
-
+          {errors.logo && <p className="mt-1 text-sm text-red-600">{errors.logo.message}</p>}
+          <div className='xl:text-[20px] lg:text-[24px]'>
           <div>
             <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">Name</label>
             <input
@@ -128,7 +126,9 @@ const TeamCreationForm = ({ onBack }) => {
                   ))}
                 </select>
               )}
-            />
+            /> 
+             
+
             {errors.sport && <p className="mt-1 text-sm text-red-600">{errors.sport.message}</p>}
           </div>
 
@@ -142,13 +142,16 @@ const TeamCreationForm = ({ onBack }) => {
             />
             {errors.number_of_players && <p className="mt-1 text-sm text-red-600">{errors.number_of_players.message}</p>}
           </div>
+          </div>
+          
+<button
+  type="submit"
+  className="lg:ml-[300px] xl:ml-[300px] items-center  md:w-[280px] py-2 px-4 ml-[100px] bg-[#E99700] text-white font-semibold rounded-md hover:bg-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 sm:ml-52 xl:text-[25px] md:text-[32px]"
+>
+  Create Team
+</button>
 
-          <button
-            type="submit"
-            className="lg:ml-[300px] xl:ml-[300px] items-center w-full max-w-[280px] py-2 px-4 bg-[#E99700] text-white font-semibold rounded-md hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 mx-auto xl:text-[25px] md:text-[32px]"
-          >
-            Create Team
-          </button>
+
         </form>
 
         {showSuccessModal && (
@@ -186,4 +189,5 @@ const TeamCreationForm = ({ onBack }) => {
 };
 
 export default TeamCreationForm;
+
 
