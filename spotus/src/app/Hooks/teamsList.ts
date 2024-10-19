@@ -1,7 +1,7 @@
 
 
 import { useEffect, useState } from 'react';
-import { fetchTeamsList } from '../Utils/getTeamsList';
+import { fetchTeamsList } from '../utils/getTeamsList';
 
 const useTeamsList = () => {
   const [teams, setTeams] = useState([]);

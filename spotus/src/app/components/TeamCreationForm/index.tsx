@@ -7,7 +7,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { Plus, ArrowLeft, Check, X, Upload } from 'react-feather';
 import usePostTeams from '@/app/Hooks/usePostTeams';
-import { Team } from '@/app/Utils/types';
+import { Team } from '@/app/utils/types';
 
 const schema = yup.object().shape({
   name: yup.string().required('Team name is required'),

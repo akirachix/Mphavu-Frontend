@@ -4,6 +4,10 @@ import Sidebar from "./components/Layout/AgentSidebar";
 import AgentSidebar from "./components/Layout/AgentSidebar";
 import Navbar from "./components/Navbar";
 import TeamList from "./components/TeamList";
+import StatisticsForm from "./components/statistics/page";
+import RegistrationForm from "./components/Signup";
+import LoginPage from "./components/Login";
+import Teams from "./components/Team";
 
 export default function Home() {
   return (
@@ -12,9 +16,16 @@ export default function Home() {
       {/* <LandingPage/> */}
       {/* <AgentSidebar/> */}
       <TeamList/>
+    <LandingPage/>
+       <AgentSidebar/> 
+       <StatisticsForm/>
+      <LandingPage/>
+      <AgentSidebar/>
+      <Teams/>
        
       </main>
-    
+      <RegistrationForm/>
+      <LoginPage/>
     </div>
   );
 }

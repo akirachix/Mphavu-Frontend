@@ -2,7 +2,7 @@
 
 
 import { useState } from 'react';
-import { TeamResponse } from '../Utils/types'; 
+import { TeamResponse } from '../utils/types'; 
 
 const usePostTeams = () => {
   const [loading, setLoading] = useState(false);
