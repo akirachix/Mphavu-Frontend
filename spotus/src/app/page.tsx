@@ -1,25 +1,32 @@
 
-"use client"; 
-import AddPlayer from "@/components/AddPlayer/page";
-import PlayerNotFound from "@/components/PlayerNotFound/page";
-import Players from "@/components/Players/page";
-import PlayerProfile from "@/components/PlayerStats/page";
-import StatisticsForm from "@/components/Statistics/page";
-import PlayerPerformance from "@/components/PlayerProfile/page";
-import Dashboard from "@/components/Dashboard/page";
-import Dashboardss from "@/components/Dashboards/page";
-import PlayerStats from "@/components/PlayerStats/page";
+"use client";
+
+import Statistics from "./components/analyze";
+import Players from "./components/players/page";
+import StatisticsPage from "./components/statisticsform/page";
+import StatisticsForm from "./components/statisticsform/page";
+import PerformanceMetrics from "./components/analyze";
+import Analyze from "./components/analyze";
+import Dashboard from "./components/dashboard/page";
+import Sidebar from "./components/sidebar/pages";
+import AnalyzeResults from "./analyze/page";
+// import AnalyzeResults from "./components/analyze";
 export default function Home() {
   return (
     <main>
-           {/* <StatisticsForm/> */}
-          {/* <PlayerStats/> */}
+      <div>
+        {/* <Players/> */}
+        {/* <AnalyzeResults/> */}
+        {/* <Statistics/> */}
+        {/* <Performance/> */}
+        {/* <PerformanceMetrics/> */}
         <StatisticsForm/>
-          {/* <PlayerProfile/> */}
-          {/* <AddPlayer/> */}
-          {/* <PlayerNotFound/> */}
-      {/* <Dashboard/>
-      <Dashboardss/>  */}
-    </main>
+        {/* <Analyze/> */}
+        {/* <PerformanceMetrics />*/}
+        {/* <Dashboard/> */}
+        {/* <Sidebar/> */}
+        <AnalyzeResults/>
+      </div>
+</main>
   );
 }
