@@ -22,6 +22,6 @@
       
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/components/players/page.tsx", "src/app/components/playerstats/page.tsx", "src/app/components/statisticsform/page.tsx", "src/app/components/Stats/page.tsx", "src/app/components/playernotfound/page.tsx", "src/app/components/addplayer/page.tsx", "src/app/hooks/usePlayerStatsHook"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/components/players/index.tsx", "src/app/components/playerstats/index.tsx", "src/app/components/statisticsform/index.tsx", "src/app/components/Stats/page.tsx", "src/app/components/playernotfound/page.tsx", "src/app/components/addplayer/index.tsx", "src/app/hooks/usePlayerStatsHook"],
   "exclude": ["node_modules"]
 }

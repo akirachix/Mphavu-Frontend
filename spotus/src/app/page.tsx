@@ -1,15 +1,8 @@
 
 "use client";
 
-import Statistics from "./components/analyze";
-import Players from "./components/players/page";
-import StatisticsPage from "./components/statisticsform/page";
-import StatisticsForm from "./components/statisticsform/page";
-import PerformanceMetrics from "./components/analyze";
-import Analyze from "./components/analyze";
-import Dashboard from "./components/dashboard/page";
-import Sidebar from "./components/sidebar/pages";
-import AnalyzeResults from "./analyze/page";
+import Dashboard from "./components/dashboard";
+import Sidebar from "./components/Sidebar";
 // import AnalyzeResults from "./components/analyze";
 export default function Home() {
   return (
@@ -20,12 +13,13 @@ export default function Home() {
         {/* <Statistics/> */}
         {/* <Performance/> */}
         {/* <PerformanceMetrics/> */}
-        <StatisticsForm/>
+        {/* <StatisticsForm/> */}
         {/* <Analyze/> */}
         {/* <PerformanceMetrics />*/}
         {/* <Dashboard/> */}
-        {/* <Sidebar/> */}
-        <AnalyzeResults/>
+        <Sidebar/>
+        {/* <Dashboard/> */}
+        {/* <AnalyzeResults/> */}
       </div>
 </main>
   );
