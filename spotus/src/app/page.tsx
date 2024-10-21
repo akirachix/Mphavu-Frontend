@@ -1,15 +1,10 @@
 import Image from "next/image";
+
+import Sidebar from "./components/Sidebar";
 import LandingPage from "./components/LandingPage";
-import Sidebar from "./components/Layout/AgentSidebar";
-import AgentSidebar from "./components/Layout/AgentSidebar";
-
-import ScoutingComparison from "./components/ScoutingComparison";
-import Statistics from "./components/statistics/page";
-
-import CardStatistics from "./components/cardStatistics/page";
-import Comparison from "./components/ScoutingComparison";
-import SelectRole from "./components/SelectRole";
+import Statistics from "./components/cardStatistics/page";
 import Team from "./components/Team";
+import ScoutingComparison from "./components/ScoutingComparison";
 
 
 export default function Home() {
@@ -18,11 +13,13 @@ export default function Home() {
       <main>
       {/* <LandingPage/> */}
       {/* <SelectRole/> */}
-      {/* <AgentSidebar/> */}
-      <Team/>
+      {/* <Team/> */}
       {/* <ScoutingComparison/> */}
       {/* <Statistics/> */}
-      <CardStatistics/>
+      {/* <CardStatistics/> */}
+
+      {/* <Sidebar/> */}
+      <ScoutingComparison/>
       
 
 {/* didn't fetch */}
