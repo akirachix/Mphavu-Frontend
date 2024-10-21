@@ -1,6 +1,13 @@
+
 import axios from 'axios';
 
 const BASE_URL = 'http://127.0.0.1:8000/api';
+
+
+import axios from 'axios';
+
+const BASE_URL = 'http://127.0.0.1:8000/api';
+
 export const fetchTeams = async () => {
   try {
     const response = await axios.get(`${BASE_URL}/teams/`);
@@ -10,6 +17,8 @@ export const fetchTeams = async () => {
     throw error;
   }
 };
+
+
 export const fetchTeamData = async (teamId) => {
   try {
     const response = await axios.get(`${BASE_URL}/teams/${teamId}/`);
@@ -19,6 +28,9 @@ export const fetchTeamData = async (teamId) => {
     throw error;
   }
 };
+
+
+
 export const fetchTeamPlayers = async (teamId) => {
   try {
     const response = await axios.get(`${BASE_URL}/teams/${teamId}/players/`);
@@ -27,4 +39,8 @@ export const fetchTeamPlayers = async (teamId) => {
     console.error('Error fetching team players:', error);
     throw error;
   }
+
 };
+
+};
+
