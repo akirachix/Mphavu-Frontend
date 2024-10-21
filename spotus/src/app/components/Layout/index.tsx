@@ -1,3 +1,6 @@
+"use client";
+import React from 'react';
+import Sidebar from '../AdminSidebar';
 
 
 "use client";
@@ -7,6 +10,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <div className="flex min-h-screen">
       <aside className="bg-[#0F75BC] w-[20%]">
+        <Sidebar />
+
         <Sidebar/>
       </aside>
       <main className="flex-grow p-4 bg-white">
@@ -15,6 +20,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     </div>
   );
 };
+export default Layout;
 export default Layout;
 
 "use client";
