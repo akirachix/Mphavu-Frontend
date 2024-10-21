@@ -5,5 +5,3 @@ export const getPlayerStatistics = async (playerId: number) => {
   return await fetchStatistics(playerId);
 };
 
-
-
