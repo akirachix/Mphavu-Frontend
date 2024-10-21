@@ -5,7 +5,7 @@ import { ArrowLeft, Search, CirclePlus } from 'lucide-react';
 
 interface TeamsHeaderProps {
     setIsCreatingTeam: (value: boolean) => void; 
-    onSearch: (searchTerm: string) => void; 
+    onSearch: (searchTerm: string) => void; // Add search function prop
 }
 
 const TeamsHeader: React.FC<TeamsHeaderProps> = ({ setIsCreatingTeam, onSearch }) => {
@@ -18,16 +18,16 @@ const TeamsHeader: React.FC<TeamsHeaderProps> = ({ setIsCreatingTeam, onSearch }
   const handleInputChange = (e) => {
     const value = e.target.value;
     setSearchTerm(value);
-    onSearch(value); 
+    onSearch(value); // Call the search function from parent
   };
 
   return (
       <div className="mt-[5px] flex flex-col md:flex-row justify-between items-start mb-4 ml-[50px]">
-          <div className=" flex items-center mb-2 md:mb-0 md:mr-4 " style={{ marginTop: '10px' }}>
-              <ArrowLeft className="h-6 w-6 text-gray-600 mb-[-85px]" />
+          <div className="flex items-center mb-2 md:mb-0 md:mr-4 " style={{ marginTop: '10px' }}>
+              <ArrowLeft className="h-6 w-6 text-gray-600" />
           </div>
 
-          <div className="relative  mb-4 mt-[90px] lg:w-[600px] lg:mx-auto lg:ml-0 lg:mt-[100px]">
+          <div className="relative w-full mb-4 mt-[90px] lg:w-[600px] lg:mx-auto lg:ml-0 lg:mt-[100px]">
               <input
                   type="text"
                   placeholder="Search Team"
@@ -41,9 +41,9 @@ const TeamsHeader: React.FC<TeamsHeaderProps> = ({ setIsCreatingTeam, onSearch }
           <div className="flex items-center mb-4">
               <button
                   onClick={handleAddClick}
-                  className="bg-[#177BBD] text-white px-4 py-2 rounded-lg flex items-center hover:bg-yellow-600 h-[60px] w-[250px] text-[25px] md:mr-[200px] xl:mr-[90px] lg:mr-[70px] sm:mr-[20px]"
+                  className="bg-[#177BBD] text-white px-4 py-2 rounded-lg flex items-center hover:bg-yellow-600 h-[60px] w-[250px] text-[25px] md:mr-[200px] xl:mr-[90px] lg:mr-[70px]"
               >
-                  <CirclePlus className="h-8 w-12 mr-2 " />
+                  <CirclePlus className="h-8 w-12 mr-2" />
                   Create Team
               </button>
           </div>
