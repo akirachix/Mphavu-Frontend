@@ -1,18 +1,19 @@
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL; 
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 export const fetchTeamsList = async () => {
-  const response = await fetch(`${BASE_URL}/api/teams/`); 
+  const response = await fetch(`${BASE_URL}/api/teams/`);
   if (!response.ok) {
-    throw new Error('Failed to fetch teams list');
+    throw new Error('Failed to fetch teams');
   }
+  return response.json();
+};
 
-  const data = await response.json();
-  
-  return data.map((team) => ({
-    logo: `${BASE_URL}${team.logo}`,
-    name: team.name,
-    numPlayers: team.number_of_players,
-  }));
+export const fetchTeamPlayers = async (teamId) => {
+  const response = await fetch(`${BASE_URL}/api/teams/${teamId}/players/`);
+  if (!response.ok) {
+    throw new Error('Failed to fetch players');
+  }
+  return response.json();
 };
 
