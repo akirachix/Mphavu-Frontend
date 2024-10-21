@@ -22,12 +22,18 @@ const validationSchema = Yup.object().shape({
 
 export default function AddPlayer() {
     const [playerPhoto, setPlayerPhoto] = useState<File | null>(null);
+
+    const [playerPhotoPreview, setPlayerPhotoPreview] = useState<string | null>(null);
+
     const [teams, setTeams] = useState<string[]>([]);
     const [isTeamDropdownOpen, setIsTeamDropdownOpen] = useState<boolean>(false);
     const [selectedTeam, setSelectedTeam] = useState<string>('');
     const [position, setPosition] = useState<string[]>([]);
     const [isPositionDropdownOpen, setIsPositionDropdownOpen] = useState<boolean>(false);
     const [selectedPosition, setSelectedPosition] = useState<string>('');
+
+    const [successMessage, setSuccessMessage] = useState<string | null>(null);
+
 
     useEffect(() => {
         setTeams(['Mphavu', 'Ligi Ndogo', 'Kipaji', 'Nextgen']);
@@ -56,9 +62,20 @@ export default function AddPlayer() {
             formData.append('playerPhoto', playerPhoto); 
         }
 
+       try {
+            const response = await addPlayer(formData);
+            console.log(response);
+            setSuccessMessage('Player has been successfully added!');
+            // Clear the form after successful submission
+            setPlayerPhoto(null);
+            setPlayerPhotoPreview(null);
+            setSelectedTeam('');
+            setSelectedPosition('');
+
         try {
             const response = await addPlayer(formData);
             console.log(response);
+
         } catch (error) {
             console.error(error);
         }
@@ -68,17 +85,26 @@ export default function AddPlayer() {
         const file = e.target.files?.[0];
         if (file) {
             setPlayerPhoto(file);
+
+            setPlayerPhotoPreview(URL.createObjectURL(file)); // Set the image preview
+
         }
     };
 
     const inputClasses =
+
+    'ml-20 w-[80%] h-[10%] py-8 px-8 text-sm border-blue-500 border rounded-[24px] shadow-md shadow-black/50 font-[josefinSans]';
+
     'w-full h-full py-8 px-8 text-sm border-blue-500 border rounded-[24px] shadow-md shadow-black/50 font-[josefinSans]';
+
 
     return (
         <div className="min-h-screen flex items-center justify-center font-[josefinSans]">
             <div className="w-full max-w-7xl bg-white rounded-xl border border-black pl-40 pr-40 pt-5 pb-5">
             <div className="flex mb-8 items-center justify-between">
                 <Link href="/components/players">
+    <ArrowLeft className="w-10 h-10 ml-20 font-bold text-black-600" />
+
     <ArrowLeft className="w-10 h-10 font-bold text-black-600" />
     </Link>
     <h2 className="text-4xl text-[#283891] font-bold mx-auto">Add New Player</h2>
@@ -105,9 +131,19 @@ export default function AddPlayer() {
                             {playerPhoto ? `Selected: ${playerPhoto.name}` : 'Add player photo'}
                         </span>
                     </div>
+                    {playerPhotoPreview && (
+                        <div className="mb-6 flex justify-center">
+                            <img src={playerPhotoPreview} alt="Player Photo" className="w-40 h-40 rounded-full object-cover" />
+                        </div>
+                    )}
+
+                    <div className="mb-4">
+                        <label htmlFor="playerName" className="block text-xl text-black mb-1 ml-24">
+
 
                     <div className="mb-4">
                         <label htmlFor="playerName" className="block text-xl text-black mb-1 ml-5">
+
                             Player Name
                         </label>
                         <input
@@ -120,7 +156,11 @@ export default function AddPlayer() {
                     </div>
 
                     <div className="mb-4">
+
+                        <label htmlFor="team" className="block text-xl text-black mb-1 ml-24">
+
                         <label htmlFor="team" className="block text-xl text-black mb-1 ml-5">
+
                             Team
                         </label>
                         <div className="relative">
@@ -154,7 +194,10 @@ export default function AddPlayer() {
                         </div>
                     </div>
                     <div className="mb-4">
+                        <label htmlFor="position" className="block text-xl text-black mb-1 ml-24">
+
                         <label htmlFor="position" className="block text-xl text-black mb-1 ml-5">
+
                             Position
                         </label>
                         <div className="relative">
@@ -189,7 +232,10 @@ export default function AddPlayer() {
                     </div>
 
                     <div className="mb-4">
+                        <label htmlFor="dob" className="block text-xl text-black mb-2 hover:bg-blue-100 ml-24">
+
                         <label htmlFor="dob" className="block text-xl text-black mb-2 hover:bg-blue-100 ml-5">
+
                             Date of birth
                         </label>
                         <input
