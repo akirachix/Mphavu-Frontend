@@ -1,5 +1,13 @@
 import Image from "next/image";
+
+import Sidebar from "./components/Sidebar";
 import LandingPage from "./components/LandingPage";
+
+import Statistics from "./components/cardStatistics/page";
+import Team from "./components/Team";
+import ScoutingComparison from "./components/ScoutingComparison";
+
+
 import Sidebar from "./components/Layout/AgentSidebar";
 import AgentSidebar from "./components/Layout/AgentSidebar";
 import Navbar from "./components/Navbar";
@@ -8,6 +16,7 @@ import StatisticsForm from "./components/statistics/page";
 import RegistrationForm from "./components/Signup";
 import LoginPage from "./components/Login";
 import Teams from "./components/Team";
+
 
 
 "use client";
@@ -38,6 +47,29 @@ export default function Home() {
     <div>
       <main>
       {/* <LandingPage/> */}
+
+      {/* <SelectRole/> */}
+      {/* <Team/> */}
+      {/* <ScoutingComparison/> */}
+      {/* <Statistics/> */}
+      {/* <CardStatistics/> */}
+
+      {/* <Sidebar/> */}
+      <ScoutingComparison/>
+      
+
+{/* didn't fetch */}
+      {/* <ComparativeStatistics/>    */}
+
+{/* Failed error--- check later*/}
+      {/* <PlayerCard/> */}
+
+{/* Repeated */}
+      {/* <Comparison/> */}
+
+
+
+
       {/* <AgentSidebar/> */}
       <TeamList/>
     <LandingPage/>
@@ -47,6 +79,7 @@ export default function Home() {
       <AgentSidebar/>
       <Teams/>
        
+
       </main>
       <RegistrationForm/>
       <LoginPage/>

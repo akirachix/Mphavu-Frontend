@@ -2,6 +2,10 @@
 
 import React from 'react';
 import { useRouter } from 'next/navigation';
+import { IoHomeSharp } from "react-icons/io5";
+import { TbPlayFootball } from "react-icons/tb";
+import { FaScaleBalanced } from "react-icons/fa6";
+import Link from 'next/link';
 
 const LandingPage = () => {
   const router = useRouter();
@@ -9,6 +13,10 @@ const LandingPage = () => {
   const handleExploreClick = () => {
     router.push('/signup'); 
   };
+
+  function setActiveLink(arg0: string): void {
+    throw new Error('Function not implemented.');
+  }
 
   return (
     <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center relative">

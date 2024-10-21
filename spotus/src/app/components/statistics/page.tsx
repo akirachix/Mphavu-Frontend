@@ -1,4 +1,5 @@
 
+
 'use client';
 import Head from 'next/head';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
@@ -174,6 +175,7 @@ export default function statistics() {
     </div>
   );
 }
+
 
 
 "use client";
@@ -393,3 +395,4 @@ const StatisticsForm = () => {
 };
 
 export default StatisticsForm;
+

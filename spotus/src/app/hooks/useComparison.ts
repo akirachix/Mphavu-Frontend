@@ -1,14 +1,7 @@
 
 import { useEffect, useState } from 'react';
 import { handleApiError, sanitizePlayerData, sanitizeTeamData } from '../utils/team';
-
-
-
-import { fetchTeams,fetchTeamData, fetchTeamPlayers } from '../api/team/get/route';
-
-
 import { fetchTeamData, fetchTeamPlayers, fetchTeams } from '../api/team/get/route';
-
 
 
 export const useTeamData = (teamId) => {
@@ -45,9 +38,4 @@ export const useTeamData = (teamId) => {
 
   return { teams, teamData, players, loading, error };
 };
-
-
-  return { teams, teamData, players, loading, error };
-};
-
 
